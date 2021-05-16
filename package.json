@@ -1,0 +1,45 @@
+{
+  "name": "water-meter",
+  "version": "1.1.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "debug": "DEBUG_MODE='true'  node --inspect-brk index.js",
+    "dev": "DEBUG_MODE='true' node index.js",
+    "start": "node index.js",
+    "lint": "eslint .",
+    "validate": "npm run lint",
+    "precommit": "npm run validate",
+    "preversion": "npm run validate",
+    "version": "git add -A .",
+    "postversion": "git push --all; git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wouldgo/water-meter.git"
+  },
+  "author": "Dario Andrei <wouldgo84@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wouldgo/water-meter/issues"
+  },
+  "homepage": "https://github.com/wouldgo/water-meter#readme",
+  "pre-commit": [
+    "validate"
+  ],
+  "devDependencies": {
+    "eslint": "7.26.0",
+    "eslint-plugin-import": "2.23.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "5.1.0",
+    "prettier": "2.3.0",
+    "pre-commit": "1.2.2"
+  },
+  "dependencies": {
+    "make-promises-safe": "^5.1.0",
+    "node-raspistill": "1.0.3",
+    "pino": "^6.11.3",
+    "rpio": "2.4.2",
+    "rxjs": "7.0.1"
+  }
+}
